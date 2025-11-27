@@ -114,6 +114,7 @@
         const curriculum = [
             {
                 id: 'intro',
+                category: 'Unit 1: Core Concepts',
                 title: 'Introduction to Networks',
                 level: 'Beginner',
                 content: `
@@ -174,6 +175,7 @@
             },
             {
                 id: 'ip-mac',
+                category: 'Unit 1: Core Concepts',
                 title: 'IP vs MAC Addresses',
                 level: 'Beginner',
                 content: `
@@ -225,6 +227,7 @@
             },
             {
                 id: 'devices',
+                category: 'Unit 1: Core Concepts',
                 title: 'Network Hardware',
                 level: 'Beginner',
                 content: `
@@ -263,60 +266,69 @@
                 `
             },
             {
-                id: 'dns',
-                title: 'DNS: The Phonebook',
+                id: 'osi',
+                category: 'Unit 2: Architecture',
+                title: 'The OSI Model',
                 level: 'Intermediate',
                 content: `
                     <div class="max-w-3xl mx-auto space-y-8">
-                         <header class="border-b border-slate-800 pb-6">
+                        <header class="border-b border-slate-800 pb-6">
                             <span class="px-2 py-1 rounded bg-yellow-900 text-yellow-300 text-xs font-bold uppercase">Intermediate</span>
-                            <h1 class="text-4xl font-bold mt-2 text-white">DNS</h1>
-                            <p class="text-slate-400 mt-2 text-lg">Domain Name System.</p>
+                            <h1 class="text-4xl font-bold mt-2 text-white">The OSI Model</h1>
+                            <p class="text-slate-400 mt-2 text-lg">The 7 Layers of Networking.</p>
                         </header>
 
-                        <p class="text-slate-300">Computers don't know what "google.com" is. They only know IP addresses like <code>142.250.190.46</code>. DNS is the system that translates human names to robot numbers.</p>
+                        <p class="text-slate-300">Networking is complex, so engineers split it into 7 layers. When you send data, it goes down the layers (7 to 1). When you receive it, it goes up (1 to 7).</p>
 
-                        <div class="bg-slate-900 border border-slate-700 rounded-xl p-6 relative overflow-hidden">
-                            <h4 class="text-center text-brand-400 font-bold mb-6">The DNS Lookup Process</h4>
-                            
-                            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm">
-                                <div class="flex flex-col items-center z-10">
-                                    <div class="w-16 h-16 bg-slate-700 rounded-full flex items-center justify-center text-2xl mb-2">👤</div>
-                                    <span class="text-slate-300">You</span>
-                                    <span class="text-slate-500">"google.com"</span>
-                                </div>
-
-                                <div class="hidden md:block flex-1 h-0.5 bg-slate-700 relative">
-                                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] text-slate-500">Query</div>
-                                </div>
-
-                                <div class="flex flex-col items-center z-10">
-                                    <div class="w-16 h-16 bg-indigo-900 rounded-full flex items-center justify-center text-2xl mb-2">📒</div>
-                                    <span class="text-slate-300">DNS Server</span>
-                                    <span class="text-slate-500">Looks up IP...</span>
-                                </div>
-
-                                <div class="hidden md:block flex-1 h-0.5 bg-slate-700 relative">
-                                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] text-slate-500">Response</div>
-                                </div>
-
-                                <div class="flex flex-col items-center z-10">
-                                    <div class="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center text-2xl mb-2">🖥️</div>
-                                    <span class="text-slate-300">Server</span>
-                                    <span class="text-slate-500">142.250.190.46</span>
-                                </div>
+                        <div class="space-y-2 font-mono text-sm">
+                            <div class="flex items-center bg-slate-800 p-3 rounded border-l-4 border-pink-500">
+                                <span class="w-8 font-bold text-pink-400">7</span>
+                                <span class="flex-1 font-bold text-white">Application</span>
+                                <span class="text-xs text-slate-400">Chrome, Outlook (HTTP, SMTP)</span>
+                            </div>
+                            <div class="flex items-center bg-slate-800 p-3 rounded border-l-4 border-pink-500/80">
+                                <span class="w-8 font-bold text-pink-400/80">6</span>
+                                <span class="flex-1 font-bold text-white">Presentation</span>
+                                <span class="text-xs text-slate-400">Encryption, JPEG, GIF</span>
+                            </div>
+                            <div class="flex items-center bg-slate-800 p-3 rounded border-l-4 border-pink-500/60">
+                                <span class="w-8 font-bold text-pink-400/60">5</span>
+                                <span class="flex-1 font-bold text-white">Session</span>
+                                <span class="text-xs text-slate-400">Keep connection open</span>
+                            </div>
+                            <div class="flex items-center bg-slate-800 p-3 rounded border-l-4 border-blue-500">
+                                <span class="w-8 font-bold text-blue-400">4</span>
+                                <span class="flex-1 font-bold text-white">Transport</span>
+                                <span class="text-xs text-slate-400">TCP, UDP (Reliability)</span>
+                            </div>
+                            <div class="flex items-center bg-slate-800 p-3 rounded border-l-4 border-blue-500/80">
+                                <span class="w-8 font-bold text-blue-400/80">3</span>
+                                <span class="flex-1 font-bold text-white">Network</span>
+                                <span class="text-xs text-slate-400">Routers, IP Addresses</span>
+                            </div>
+                            <div class="flex items-center bg-slate-800 p-3 rounded border-l-4 border-green-500">
+                                <span class="w-8 font-bold text-green-400">2</span>
+                                <span class="flex-1 font-bold text-white">Data Link</span>
+                                <span class="text-xs text-slate-400">Switches, MAC Addresses</span>
+                            </div>
+                            <div class="flex items-center bg-slate-800 p-3 rounded border-l-4 border-green-500/80">
+                                <span class="w-8 font-bold text-green-400/80">1</span>
+                                <span class="flex-1 font-bold text-white">Physical</span>
+                                <span class="text-xs text-slate-400">Cables, Wifi Signals</span>
                             </div>
                         </div>
-
-                         <div class="bg-yellow-900/20 border border-yellow-700/50 p-4 rounded-lg">
-                            <h5 class="text-yellow-400 font-bold text-sm mb-1">Try it in the Lab!</h5>
-                            <p class="text-slate-400 text-sm">Open the terminal lab and type <code>nslookup google.com</code> to see this in action.</p>
+                        
+                        <div class="bg-slate-900 p-4 rounded text-center">
+                            <p class="text-xs text-slate-500 uppercase tracking-widest mb-2">Mnemonic to remember</p>
+                            <p class="text-lg text-brand-400 italic">"Please Do Not Throw Sausage Pizza Away"</p>
+                            <p class="text-xs text-slate-600 mt-1">(Physical -> Application)</p>
                         </div>
                     </div>
                 `
             },
             {
                 id: 'ports',
+                category: 'Unit 2: Architecture',
                 title: 'Ports & Protocols',
                 level: 'Intermediate',
                 content: `
@@ -369,6 +381,137 @@
                         </div>
                     </div>
                 `
+            },
+            {
+                id: 'dhcp',
+                category: 'Unit 3: Infrastructure Services',
+                title: 'DHCP: Getting an IP',
+                level: 'Intermediate',
+                content: `
+                    <div class="max-w-3xl mx-auto space-y-8">
+                        <header class="border-b border-slate-800 pb-6">
+                            <span class="px-2 py-1 rounded bg-yellow-900 text-yellow-300 text-xs font-bold uppercase">Intermediate</span>
+                            <h1 class="text-4xl font-bold mt-2 text-white">DHCP</h1>
+                            <p class="text-slate-400 mt-2 text-lg">Dynamic Host Configuration Protocol.</p>
+                        </header>
+
+                        <p class="text-slate-300">How does your phone get an IP address when you walk into a cafe? It asks for one using DHCP.</p>
+                        
+                        <div class="glass-panel p-6 rounded-xl">
+                            <h3 class="text-xl font-bold text-white mb-4">The DORA Process</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
+                                <div class="bg-slate-800 p-3 rounded border-t-2 border-yellow-500">
+                                    <strong class="text-yellow-400 block mb-1">1. Discover</strong>
+                                    <span class="text-slate-400">New Device yells: "Is there a DHCP server here? I need an IP!"</span>
+                                </div>
+                                <div class="bg-slate-800 p-3 rounded border-t-2 border-blue-500">
+                                    <strong class="text-blue-400 block mb-1">2. Offer</strong>
+                                    <span class="text-slate-400">Router replies: "I can give you 192.168.1.50."</span>
+                                </div>
+                                <div class="bg-slate-800 p-3 rounded border-t-2 border-green-500">
+                                    <strong class="text-green-400 block mb-1">3. Request</strong>
+                                    <span class="text-slate-400">Device says: "Great, I'll take that 192.168.1.50 please."</span>
+                                </div>
+                                <div class="bg-slate-800 p-3 rounded border-t-2 border-purple-500">
+                                    <strong class="text-purple-400 block mb-1">4. Acknowledge</strong>
+                                    <span class="text-slate-400">Router says: "It's yours for 24 hours. Here is the receipt."</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 'dns',
+                category: 'Unit 3: Infrastructure Services',
+                title: 'DNS: The Phonebook',
+                level: 'Intermediate',
+                content: `
+                    <div class="max-w-3xl mx-auto space-y-8">
+                         <header class="border-b border-slate-800 pb-6">
+                            <span class="px-2 py-1 rounded bg-yellow-900 text-yellow-300 text-xs font-bold uppercase">Intermediate</span>
+                            <h1 class="text-4xl font-bold mt-2 text-white">DNS</h1>
+                            <p class="text-slate-400 mt-2 text-lg">Domain Name System.</p>
+                        </header>
+
+                        <p class="text-slate-300">Computers don't know what "google.com" is. They only know IP addresses like <code>142.250.190.46</code>. DNS is the system that translates human names to robot numbers.</p>
+
+                        <div class="bg-slate-900 border border-slate-700 rounded-xl p-6 relative overflow-hidden">
+                            <h4 class="text-center text-brand-400 font-bold mb-6">The DNS Lookup Process</h4>
+                            
+                            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm">
+                                <div class="flex flex-col items-center z-10">
+                                    <div class="w-16 h-16 bg-slate-700 rounded-full flex items-center justify-center text-2xl mb-2">👤</div>
+                                    <span class="text-slate-300">You</span>
+                                    <span class="text-slate-500">"google.com"</span>
+                                </div>
+
+                                <div class="hidden md:block flex-1 h-0.5 bg-slate-700 relative">
+                                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] text-slate-500">Query</div>
+                                </div>
+
+                                <div class="flex flex-col items-center z-10">
+                                    <div class="w-16 h-16 bg-indigo-900 rounded-full flex items-center justify-center text-2xl mb-2">📒</div>
+                                    <span class="text-slate-300">DNS Server</span>
+                                    <span class="text-slate-500">Looks up IP...</span>
+                                </div>
+
+                                <div class="hidden md:block flex-1 h-0.5 bg-slate-700 relative">
+                                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] text-slate-500">Response</div>
+                                </div>
+
+                                <div class="flex flex-col items-center z-10">
+                                    <div class="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center text-2xl mb-2">🖥️</div>
+                                    <span class="text-slate-300">Server</span>
+                                    <span class="text-slate-500">142.250.190.46</span>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="bg-yellow-900/20 border border-yellow-700/50 p-4 rounded-lg">
+                            <h5 class="text-yellow-400 font-bold text-sm mb-1">Try it in the Lab!</h5>
+                            <p class="text-slate-400 text-sm">Open the terminal lab and type <code>nslookup google.com</code> to see this in action.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 'nat',
+                category: 'Unit 3: Infrastructure Services',
+                title: 'NAT: Private vs Public',
+                level: 'Intermediate',
+                content: `
+                    <div class="max-w-3xl mx-auto space-y-8">
+                        <header class="border-b border-slate-800 pb-6">
+                            <span class="px-2 py-1 rounded bg-yellow-900 text-yellow-300 text-xs font-bold uppercase">Intermediate</span>
+                            <h1 class="text-4xl font-bold mt-2 text-white">NAT</h1>
+                            <p class="text-slate-400 mt-2 text-lg">Network Address Translation.</p>
+                        </header>
+
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <div class="space-y-4">
+                                <p class="text-slate-300">We ran out of IPv4 addresses years ago. NAT saved us.</p>
+                                <p class="text-slate-300"><strong>NAT</strong> allows all devices in your house (Phone, Laptop, TV) to share <strong>one single Public IP</strong> address assigned by your ISP.</p>
+                            </div>
+                            <div class="bg-slate-900 p-4 rounded-xl border border-slate-700 flex flex-col items-center gap-2 text-xs">
+                                <div class="flex gap-2 w-full justify-center">
+                                    <div class="bg-blue-900 p-2 rounded text-center w-20">Phone<br><span class="text-blue-300">192.168.1.2</span></div>
+                                    <div class="bg-blue-900 p-2 rounded text-center w-20">Laptop<br><span class="text-blue-300">192.168.1.3</span></div>
+                                </div>
+                                <div class="h-8 w-1 bg-slate-600"></div>
+                                <div class="bg-green-900 p-3 rounded-lg border-2 border-green-600 w-full text-center">
+                                    <strong class="text-green-400">Router (NAT)</strong>
+                                    <div class="text-[10px] mt-1 text-slate-300">Translates Private ↔ Public</div>
+                                </div>
+                                <div class="h-8 w-1 bg-slate-600"></div>
+                                <div class="bg-red-900 p-2 rounded text-center w-full">
+                                    Internet (Public IP)<br>
+                                    <span class="text-red-300 font-mono">82.14.55.102</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
             }
         ];
 
@@ -388,15 +531,27 @@
         // --- RENDERERS ---
         function renderSidebar() {
             const list = document.getElementById('module-list');
-            list.innerHTML = curriculum.map(mod => `
-                <button onclick="loadSection('${mod.id}')" 
-                    class="w-full text-left px-4 py-3 border-l-2 transition-all duration-200 group flex justify-between items-center ${currentSection === mod.id ? 'border-brand-500 bg-slate-800/50 text-white' : 'border-transparent text-slate-400 hover:bg-slate-800 hover:text-slate-200'}">
-                    <div>
-                        <div class="text-sm font-medium">${mod.title}</div>
-                        <div class="text-[10px] opacity-60 uppercase tracking-wide mt-0.5">${mod.level}</div>
-                    </div>
-                    ${currentSection === mod.id ? '<span class="w-2 h-2 rounded-full bg-brand-500"></span>' : ''}
-                </button>
+            
+            // Group items by category
+            const groups = curriculum.reduce((acc, item) => {
+                if (!acc[item.category]) acc[item.category] = [];
+                acc[item.category].push(item);
+                return acc;
+            }, {});
+
+            list.innerHTML = Object.keys(groups).map(category => `
+                <div class="mb-4">
+                    <h3 class="px-4 py-2 text-[10px] font-bold text-slate-500 uppercase tracking-widest sticky top-0 bg-slate-900/90 backdrop-blur z-10 border-b border-slate-800/50">${category}</h3>
+                    ${groups[category].map(mod => `
+                        <button onclick="loadSection('${mod.id}')" 
+                            class="w-full text-left px-4 py-2.5 border-l-2 transition-all duration-200 group flex justify-between items-center ${currentSection === mod.id ? 'border-brand-500 bg-slate-800/50 text-white' : 'border-transparent text-slate-400 hover:bg-slate-800 hover:text-slate-200'}">
+                            <div>
+                                <div class="text-sm font-medium leading-tight">${mod.title}</div>
+                            </div>
+                            ${currentSection === mod.id ? '<span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>' : ''}
+                        </button>
+                    `).join('')}
+                </div>
             `).join('');
         }
 
